@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* Cabeçalho */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #00b3ff;
+  padding: 30px 50px;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.search-bar input {
+  padding: 20px;
+  width: 500px;
+  border-radius: 50px;
+  border: none;
+}
+
+.menu a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Banner */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 30px;
+}
+
+.banner img {
+  width: 200px;
+}
+
+.banner-text h2 {
+  font-size: 2em;
+  color: #004a80;
+}
+
+.banner-text button {
+  background: #004a80;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Produtos */
+.produtos {
+  text-align: left;
+  padding: 50px 5%;
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  
+}
+
+.item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  transition: transform 0.3s;
+
+  
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.item img {
+  width: 199px;
+  height: 199px;
+  object-fit: contain;
+}
+
+.item p {
+  margin: 10px 0 5px;
+  font-weight: lighter;
+}
+
+.item span {
+  color: #004a80;
+  font-weight: bold;
+}
+
+
+.recomendados-grid img {
+  width: 150px;
+  border-radius: 10px;
+  background: white;
+  padding: 10px;
+}
+
+/* Newsletter */
+.newsletter {
+  background: #f0f0f0;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background: #00b3ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Rodapé */
+.footer {
+  background: #c2edff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer .links {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 20px;
+}
+
+.footer h4 {
+  margin-bottom: 10px;
+  color: #004a80;
+}
+
+.footer .social a {
+  text-decoration: none;
+  margin: 0 5px;
+  font-size: 1.5em;
+}
+
+.copy {
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: #333;
+  text-align: center;
+}
