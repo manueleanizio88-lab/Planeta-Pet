@@ -48,7 +48,7 @@ body {
 
 /* Produtos */
 .produtos {
-  padding: 40px 10%;
+  padding: 90px 10%;
 }
 
 .produtos h2 {
@@ -59,7 +59,7 @@ body {
 
 .grid-produtos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
 }
 
@@ -76,14 +76,6 @@ body {
   transform: translateY(-5px);
 }
 
-.item img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
-  background: #ddd; /* caso a imagem ainda não esteja */
-  margin-bottom: 10px;
-}
 
 .item p {
   font-weight: bold;
@@ -91,13 +83,12 @@ body {
 }
 
 .item span {
-  color: #4caf50;
   font-weight: bold;
 }
 
 /* Newsletter */
 .newsletter {
-  background: #4caf50;
+
   padding: 30px;
   text-align: center;
   color: #fff;
@@ -149,13 +140,10 @@ body {
   margin-bottom: 6px;
 }
 
-.social a {
-  margin-right: 10px;
-}
-
 .copy {
   text-align: center;
   margin-top: 15px;
   font-size: 14px;
   opacity: 0.7;
 }
+

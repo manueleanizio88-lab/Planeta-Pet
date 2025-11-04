@@ -1,93 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planeta Pet</title>
-    <link rel="stylesheet" href="style2.css"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planeta Pet | Tudo para seu Pet</title>
+  <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 
-  <!-- Cabeçalho -->
-  <header class="header">
+    <header class="header">
     <div class="logo">Planeta Pet</div>
+
     <div class="search-bar">
-      <input type="text" placeholder="O que seu pet precisa hoje?">
+      <input type="text" placeholder="O que seu pet precisa hoje?" aria-label="Barra de pesquisa">
     </div>
-    <nav class="menu">
-      <a href="#">Pássaros</a>
-      <a href="#">Cães</a>
-      <a href="#">Gatos</a>
-      <a href="#">Outros Pets</a>
-      <a href="Contato"></a>
+
+   <nav class="menu" aria-label="Menu principal">
+      <a href="caes.html">Cães</a>
+      <a href="tudo gatos.html">Gatos</a>
+      <a href="passaros.html">Pássaros</a>
+      <a href="outros_pets.html">Outros Pets</a>
+      <a href="contato.html">Contato</a>
     </nav>
   </header>
-    
-    <div class="container">
+
+    <!-- Banner principal -->
+  <section class="banner">
+    <img src="comida pet.png" alt="" class="banner-img">
+
+
+  <main class="container">
 
         <section id="caes" class="section-container">
-            <div class="main-card card-cachorros">
-                <h2>Cachorros</h2>
-            </div>
-            
-            <div class="sub-categories">
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Rações secas</p></div>
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Antipulgas</p></div>
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Medicamentos</p></div>
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Tapetes higiênicos</p></div>
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Rações úmidas</p></div>
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Brinquedos</p></div>
-            </div>
-        </section>
+      <div class="main-card card-cachorros">
+        <h2>Cachorros</h2>
+      </div>
+
+      <div class="sub-categories">
+                <a href="racoes secas caes.html" class="sub-item">
+          <img src="ração seca.jpg" class="sub-item-icon" alt="Ração seca para cães">
+          <p>Rações secas</p>
+        </a>
+
+        <a href="antipulgas caes.html" class="sub-item">
+          <img src="antipulgas.jpg" class="sub-item-icon" alt="Antipulgas para cães">
+          <p>Antipulgas</p>
+        </a>
+
+        <a href="tapetes higienicos.html" class="sub-item">
+          <img src="tapetes.jpg" class="sub-item-icon" alt="Tapetes higiênicos">
+          <p>Tapetes higiênicos</p>
+        </a>
+
+        <a href="racoes umidas caes.html" class="sub-item">
+          <img src="ração umida.jpg" class="sub-item-icon" alt="Ração úmida para cães">
+          <p>Rações úmidas</p>
+        </a>
+
+        <a href="brinquedos caes.html" class="sub-item">
+          <img src="brinquedos.jpg" class="sub-item-icon" alt="Brinquedos para cães">
+          <p>Brinquedos</p>
+        </a>
+
+        <a href="acessorios caes.html" class="sub-item">
+          <img src="assessorio caes.jpg" class="sub-item-icon" alt="Acessórios para cães">
+          <p>Acessórios</p>
+        </a>
+      
+      </div>
+    </section>
 
         <section id="gatos" class="section-container">
-            <div class="main-card card-gatos">
-                <h2>Gatos</h2>
-            </div>
-            
-            <div class="sub-categories">
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Rações secas</p></div>
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Medicamentos</p></div>
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Antipulgas</p></div>
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Areias</p></div>
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Rações úmidas</p></div>
-                <div class="sub-item"><div class="sub-item-icon"></div><p>Brinquedos</p></div>
-            </div>
-        </section>
+      <div class="main-card card-gatos">
+        <h2>Gatos</h2>
+      </div>
 
-    </div>
+      <div class="sub-categories">
+        <a href="racao seca gatos.html" class="sub-item">
+          <img src="gato seca.jpg" class="sub-item-icon" alt="Ração seca para gatos">
+          <p>Rações secas</p>
+        </a>
 
-    <!-- Rodapé -->
-  <footer class="footer">
+        <a href="antipulgas gatos.html" class="sub-item">
+          <img src="gato antip.jpg" class="sub-item-icon" alt="Antipulgas para gatos">
+          <p>Antipulgas</p>
+        </a>
+
+        <a href="areias.html" class="sub-item">
+          <img src="areia.jpg" class="sub-item-icon" alt="Areia para gatos">
+          <p>Areias</p>
+        </a>
+
+        <a href="racao umida gatos.html" class="sub-item">
+          <img src="umida gato.jpg" class="sub-item-icon" alt="Ração úmida para gatos">
+          <p>Rações úmidas</p>
+        </a>
+
+        <a href="brinquedos gatos.html" class="sub-item">
+          <img src="brinquedos gato.jpg" class="sub-item-icon" alt="Brinquedos para gatos">
+          <p>Brinquedos</p>
+        </a>
+      
+        <a href="acessorios gatos.html" class="sub-item">
+          <img src="gato assessorio.jpg" class="sub-item-icon" alt="Acessórios para gatos">
+          <p>Acessórios</p>
+        </a>
+      
+      </div>
+    </section>
+
+        <section id="passaros" class="section-container">
+      <div class="main-card card-passaros">
+        <h2>Pássaros</h2>
+      </div>
+
+  </main>
+    <footer class="footer" id="contato">
     <div class="links">
       <div>
         <h4>Atendimento</h4>
-        <p>Fale Conosco</p>
-        <p>Trocas e Devoluções</p>
+        <a href="fale conosco.html">Fale Conosco</a>
+        <a href="trocas e devolucoes.html">Trocas e Devoluções</a>
       </div>
+
       <div>
         <h4>Institucional</h4>
-        <p>Quem Somos</p>
-        <p>Política de Privacidade</p>
+        <a href="quem somos.html">Quem Somos</a>
+        <a href="Pollitica de Privacidade.html">Política de Privacidade</a>
       </div>
+
       <div>
         <h4>Categorias</h4>
-        <p>Cães</p>
-        <p>Gatos</p>
-        <p>Acessórios</p>
-      </div>
+        <a href="#caes">Cães</a>
+        <a href="#gatos">Gatos</a>
+        <a href="#passaros">Pássaros</a>
+        <a href="outros_pets.html" id="outros-pets-link">Outros Pets</a>       </div>
     </div>
-    <div class="social">
-      <p>Siga-nos:</p>
-      <a href="#"></a>
-      <a href="#"></a>
-      <a href="#"></a>
-    </div>
+
     <p class="copy">© 2025 Planeta Pet - Todos os direitos reservados</p>
   </footer>
 
-  
 </body>
 </html>
-
-
