@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Planeta Pet | Tudo para seu Pet</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 
-    <header class="header">
+  <header class="header">
     <div class="logo">Planeta Pet</div>
 
     <div class="search-bar">
       <input type="text" placeholder="O que seu pet precisa hoje?" aria-label="Barra de pesquisa">
     </div>
 
-   <nav class="menu" aria-label="Menu principal">
+    <nav class="menu" aria-label="Menu principal">
       <a href="caes.html">Cães</a>
       <a href="tudo gatos.html">Gatos</a>
       <a href="passaros.html">Pássaros</a>
@@ -24,20 +25,25 @@
     </nav>
   </header>
 
-    <!-- Banner principal -->
+  <!-- Banner principal -->
   <section class="banner">
-    <img src="comida pet.png" alt="" class="banner-img">
-
+    <div class="banner-container">
+      <img src="comida pet.png" alt="Promoção de comida para pet" class="banner-img">
+      <div class="banner-text">
+        <h1>Tudo para o seu pet</h1>
+        <p>Encontre os melhores produtos com descontos especiais</p>
+      </div>
+    </div>
+  </section>
 
   <main class="container">
-
-        <section id="caes" class="section-container">
+    <section id="caes" class="section-container">
       <div class="main-card card-cachorros">
         <h2>Cachorros</h2>
       </div>
 
       <div class="sub-categories">
-                <a href="racoes secas caes.html" class="sub-item">
+        <a href="racoes secas caes.html" class="sub-item">
           <img src="ração seca.jpg" class="sub-item-icon" alt="Ração seca para cães">
           <p>Rações secas</p>
         </a>
@@ -66,11 +72,10 @@
           <img src="assessorio caes.jpg" class="sub-item-icon" alt="Acessórios para cães">
           <p>Acessórios</p>
         </a>
-      
       </div>
     </section>
 
-        <section id="gatos" class="section-container">
+    <section id="gatos" class="section-container">
       <div class="main-card card-gatos">
         <h2>Gatos</h2>
       </div>
@@ -105,39 +110,81 @@
           <img src="gato assessorio.jpg" class="sub-item-icon" alt="Acessórios para gatos">
           <p>Acessórios</p>
         </a>
-      
       </div>
     </section>
 
-        <section id="passaros" class="section-container">
+    <section id="passaros" class="section-container">
       <div class="main-card card-passaros">
         <h2>Pássaros</h2>
       </div>
-
+    </section>
   </main>
-    <footer class="footer" id="contato">
-    <div class="links">
-      <div>
-        <h4>Atendimento</h4>
-        <a href="fale conosco.html">Fale Conosco</a>
-        <a href="trocas e devolucoes.html">Trocas e Devoluções</a>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-logo">
+          <h3>Planeta Pet</h3>
+          <p>O mundo do seu animal de estimação em um só lugar!</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Atendimento</h4>
+            <ul>
+              <li><a href="fale conosco.html"><i class="fas fa-comments"></i> Fale Conosco</a></li>
+              <li><a href="trocas e devolucoes.html"><i class="fas fa-exchange-alt"></i> Trocas e Devoluções</a></li>
+              <li><a href="#"><i class="fas fa-shipping-fast"></i> Entregas</a></li>
+              <li><a href="#"><i class="fas fa-question-circle"></i> Dúvidas Frequentes</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Institucional</h4>
+            <ul>
+              <li><a href="quem somos.html"><i class="fas fa-paw"></i> Quem Somos</a></li>
+              <li><a href="Pollitica de Privacidade.html"><i class="fas fa-shield-alt"></i> Política de Privacidade</a></li>
+              <li><a href="#"><i class="fas fa-file-contract"></i> Termos de Uso</a></li>
+              <li><a href="#"><i class="fas fa-store"></i> Nossas Lojas</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Categorias</h4>
+            <ul>
+              <li><a href="#caes"><i class="fas fa-dog"></i> Cães</a></li>
+              <li><a href="#gatos"><i class="fas fa-cat"></i> Gatos</a></li>
+              <li><a href="#passaros"><i class="fas fa-dove"></i> Pássaros</a></li>
+              <li><a href="outros_pets.html"><i class="fas fa-fish"></i> Outros Pets</a></li>
+            </ul>
+          </div>
+
+        </div>
       </div>
 
-      <div>
-        <h4>Institucional</h4>
-        <a href="quem somos.html">Quem Somos</a>
-        <a href="Pollitica de Privacidade.html">Política de Privacidade</a>
+      <div class="footer-bottom">
+        <div class="payment-methods">
+          <p>Formas de pagamento:</p>
+          <div class="payment-icons">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fas fa-barcode"></i>
+          </div>
+        </div>
+        <div class="footer-copy">
+          <p>&copy; 2025 Planeta Pet - Todos os direitos reservados</p>
+          <p>Desenvolvido com <i class="fas fa-heart"></i> para pets felizes</p>
+        </div>
       </div>
-
-      <div>
-        <h4>Categorias</h4>
-        <a href="#caes">Cães</a>
-        <a href="#gatos">Gatos</a>
-        <a href="#passaros">Pássaros</a>
-        <a href="outros_pets.html" id="outros-pets-link">Outros Pets</a>       </div>
     </div>
-
-    <p class="copy">© 2025 Planeta Pet - Todos os direitos reservados</p>
   </footer>
 
 </body>
