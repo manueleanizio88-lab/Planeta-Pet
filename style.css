@@ -1,0 +1,1815 @@
+/* === GERAL === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+}
+
+/* CABEÇALHO*/
+.header-container {
+    display: flex; 
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between; /* Distribui o espaço entre os blocos */
+
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 40px; /* Ajuste o padding para altura da barra */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* --- Bloco Esquerdo (Logo + Nav) --- */
+.nav-left-section {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre a logo e os links */
+    flex-shrink: 0; /* Impede que este bloco encolha */
+}
+
+.text-logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff8c00; /* Cor Laranja */
+    margin-right: 15px; /* Espaço após a logo */
+}
+
+.dropbtn-menu {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    /* Adicione mais estilos se for um dropdown complexo */
+}
+
+.dropbtn-menu i {
+    margin-left: 5px;
+    font-size: 10px;
+}
+
+/* --- Bloco Central (Barra de Pesquisa) --- */
+.search-bar {
+    display: flex;
+    align-items: center;
+    
+    /* CORREÇÃO CHAVE: Permite que a barra cresça no centro */
+    flex-grow: 1; 
+    max-width: 600px; /* Tamanho razoável para a maioria das telas */
+    margin: 0 30px; /* Espaço entre a nav e os ícones */
+
+    background: #f7f7f7; /* Fundo cinza claro da imagem */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 12px 15px; /* Define a altura da barra */
+}
+
+.search-bar i {
+    color: #888;
+    margin-right: 10px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+}
+
+.search-bar input::placeholder {
+    color: #aaa;
+}
+
+
+/* --- Bloco Direito (Acesso de Usuário) --- */
+.action-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0; /* Impede que este bloco encolha */
+}
+
+.profile-link {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.profile-link i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.cart-link i {
+    font-size: 20px;
+    color: #444;
+}
+
+/* === TABS (CÃES / GATOS) === */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 10px;
+  gap: 20px;
+}
+
+.tab {
+  background-color: #eee;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.tab.active-tab {
+  background-color: #ff7b00;
+  color: #fff;
+}
+
+.tab:hover {
+  background-color: #ff9b3d;
+  color: white;
+}
+
+/* === CATEGORIAS  === */
+.category-carousel-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+/* Card grande ("Ver tudo") */
+.large-card {
+  width: 220px;
+  height: 280px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cta-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 12px 0;
+}
+/* === CATEGORIAS (100% alinhadas e proporcionais) === */
+.category-carousel-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; 
+    padding-bottom: 20px;
+    position: relative;
+    /* ⚠️ ADICIONAR ESTAS REGRAS: */
+    flex-wrap: nowrap; /* IMPEDE A QUEBRA PARA A LINHA DE BAIXO */
+    align-items: stretch; /* Garante que os itens estiquem para a altura máxima (melhor que align-items: center) */
+
+    /* Estilo para esconder a barra de rolagem */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+.category-carousel-container::-webkit-scrollbar {
+    display: none; 
+}
+
+/* === CARD GRANDE === */
+/* Card Grande (para manter a linha de base) */
+.category-card.large-card {
+    min-width: 250px; 
+    max-width: 250px;
+    justify-content: flex-start; 
+    height: 280px; /* ⬅️ Altura fixa igual aos cards pequenos */
+}
+
+/* Cards Pequenos (Ajustado) */
+.category-card.small-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo ao topo para imagem */
+    align-items: center; 
+    height: 280px; /* ⬅️ Altura fixa para todos os cards pequenos */
+    padding: 0; 
+}
+
+.card-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.cta-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+}
+
+/* === CARDS PEQUENOS (RAÇÃO, PETISCOS etc.) === */
+.category-card.small-card {
+  width: 100%;
+  max-width: 160px;
+  height: 220px;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.category-card.small-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.category-card.small-card img.card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.category-card.small-card .category-name {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  padding: 12px;
+  background-color: #f9f9f9;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  .category-carousel-container {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .category-card.small-card,
+  .category-card.large-card {
+    max-width: 180px;
+    height: auto;
+  }
+}
+
+
+
+
+/* === RODAPÉ PLANETA PET === */
+.footer {
+  background-color: #111827; /* fundo escuro */
+  color: #d1d5db;
+  font-family: Arial, sans-serif;
+  padding: 50px 20px 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Parte principal --- */
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+/* --- Logo e redes --- */
+.footer-logo h3 {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 15px;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #cbd5e1;
+  font-size: 18px;
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.footer-social a:hover {
+  background-color: #ff3366;
+  color: #fff;
+}
+
+/* --- Colunas de links --- */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-column h4 {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  color: #cbd5e1;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.footer-column a:hover {
+  color: #ff3366;
+}
+
+.footer-column a i {
+  width: 18px;
+  text-align: center;
+}
+
+/* --- Pagamentos e direitos --- */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.payment-methods p {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.payment-icons i {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #cbd5e1;
+}
+
+.payment-icons i:hover {
+  color: #ff3366;
+}
+
+.footer-copy p {
+  margin: 3px 0;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.footer-copy i {
+  color: #ff3366;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+  .footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .payment-icons i {
+    font-size: 20px;
+  }
+}
+
+
+/* CSS focado na seção .politica-privacidade */
+
+:root {
+    /* Cores de referência mantidas para estilização */
+    --cor-principal: hsl(248, 67%, 2%); 
+    --cor-secundaria: hsl(60, 100%, 0%); 
+    --cor-fundo: #f9f9f9; /* Fundo do corpo, usado no main */
+    --cor-texto-principal: #333;
+    --cor-borda-clara: #ddd;
+}
+
+/* ------------------ */
+/* Conteúdo Principal */
+/* ------------------ */
+
+.politica-privacidade {
+    max-width: 900px;
+    margin: 30px auto; /* Centraliza o bloco na página */
+    padding: 20px;
+    background-color: white; /* Fundo branco para o conteúdo */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+    color: var(--cor-texto-principal);
+}
+
+.politica-privacidade h1 {
+    color: var(--cor-principal);
+    border-bottom: 3px solid var(--cor-secundaria); /* Linha divisória */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.politica-privacidade h2 {
+    color: var(--cor-secundaria);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.politica-privacidade p {
+    margin-bottom: 15px;
+}
+
+/* Estilo das Seções */
+.politica-privacidade section {
+    padding: 15px 0;
+    border-top: 1px dashed var(--cor-borda-clara); /* Divisor discreto entre seções */
+}
+
+.politica-privacidade section:first-of-type {
+    border-top: none; /* Remove a borda superior da primeira seção */
+}
+
+/* Listas (ul) */
+.politica-privacidade ul {
+    list-style-type: disc;
+    margin-left: 25px;
+    padding-left: 0;
+    margin-bottom: 15px; /* Espaço após a lista */
+}
+
+.politica-privacidade ul li {
+    margin-bottom: 5px;
+}
+
+.politica-privacidade strong {
+    font-weight: bold;
+    color: var(--cor-principal); /* Destaca os títulos dos dados */
+}
+
+/*seção Quem Somos */
+
+:root {
+    /* Cores de referência */
+    --cor-principal: hsl(132, 24%, 4%); /* Verde Pet */
+    --cor-fundo-clara: #f4f4f4; /* Fundo leve para o bloco */
+    --cor-texto-principal: #333;
+    --cor-sombra: rgba(0, 0, 0, 0.08);
+}
+
+/* Estilo do Main Container (para padding geral) */
+main {
+    padding: 20px 0; /* Espaçamento vertical para o conteúdo principal */
+    background-color: var(--cor-fundo-clara); /* Fundo sutil */
+}
+
+/* Estilo da Seção Quem Somos */
+.quem-somos {
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o bloco */
+    padding: 30px;
+    background-color: white; /* Fundo branco para destaque */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--cor-sombra); /* Sombra mais destacada */
+    text-align: center; /* Centraliza títulos e parágrafos */
+}
+
+.quem-somos h2 {
+    font-size: 2.2em;
+    color: var(--cor-principal); /* Cor principal da marca */
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--cor-secundaria); /* Linha de destaque */
+    display: inline-block; /* Faz a linha se ajustar ao texto */
+    padding: 0 10px 10px 10px;
+}
+
+.quem-somos p {
+    font-size: 1.1em;
+    color: var(--cor-texto-principal);
+    margin-bottom: 20px;
+    line-height: 1.7; /* Melhora a leitura */
+    text-align: justify; /* Alinha o texto de forma mais profissional */
+    padding: 0 10px; /* Pequeno padding para respiro */
+}
+
+.quem-somos strong {
+    color: var(--cor-secundaria); /* Destaca o nome da empresa */
+    font-weight: 700;
+}
+
+/* Ajuste para o último parágrafo (chamada para ação) */
+.quem-somos p:last-of-type {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--cor-principal);
+    margin-top: 25px;
+    border-top: 1px dashed var(--cor-borda-clara, #ccc);
+    padding-top: 15px;
+}
+
+ Trocas e Devoluções */
+
+:root {
+    /* Cores de referência mantidas */
+    --cor-principal: hsl(0, 0%, 2%); /* Verde Pet */
+    --cor-fundo-clara: #f4f4f4;
+    --cor-texto-principal: #333;
+    --cor-borda-clara: #ddd;
+}
+
+/* ------------------ */
+/* Container Principal */
+/* ------------------ */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* Bloco de Trocas e Devoluções */
+.trocas-devolucoes {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    line-height: 1.6;
+    color: var(--cor-texto-principal);
+}
+
+.trocas-devolucoes h1 {
+    font-size: 2.2em;
+    color: var(--cor-principal);
+    border-bottom: 3px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* ------------------ */
+/* Estilos por Tópico */
+/* ------------------ */
+
+.trocas-devolucoes h2 {
+    font-size: 1.6em;
+    color: var(--cor-secundaria);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o ícone e o texto */
+    padding-left: 5px;
+}
+
+/* Estilo para ícones no H2 (Font Awesome) */
+.trocas-devolucoes h2 i {
+    font-size: 1.2em;
+    color: var(--cor-principal);
+}
+
+
+.trocas-devolucoes p {
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   1. CONFIGURAÇÕES GLOBAIS / VARIÁVEIS
+   ========================================= */
+:root {
+    --cor-primaria: #007bff; /* Azul vibrante */
+    --cor-secundaria: #ffc107; 
+    --cor-fundo-claro: #f8f9fa; /* Cinza claro */
+    --cor-texto: #343a40; 
+    --cor-borda: #ced4da;
+    --cor-fundo-info: #e9ecef; /* Fundo levemente cinza para info-contato */
+}
+
+
+/* =========================================
+   2. LAYOUT GERAL E CONTÊINER (CAIXA MENOR)
+   ========================================= */
+
+/* O contêiner principal - Define a largura máxima da "caixa" */
+.container-contato {
+    max-width: 800px; /* Largura máxima reduzida para caber menos na tela */
+    margin: 40px auto;
+    padding: 0 15px; 
+}
+
+/* O fundo branco com sombra que envolve todo o conteúdo */
+.fale-conosco {
+    padding: 20px; /* Padding interno reduzido */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fale-conosco h1 {
+    color: var(--cor-primaria);
+    font-size: 2.2em; 
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.intro-contato {
+    text-align: center;
+    color: var(--cor-texto);
+    margin-bottom: 25px;
+    font-size: 1em;
+}
+
+/* Estrutura Flexbox para as duas colunas */
+.contato-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 25px; 
+    align-items: stretch; /* Alinha a altura das colunas */
+}
+
+
+/* =========================================
+   3. ESTILOS DO FORMULÁRIO
+   ========================================= */
+
+.formulario-contato {
+    flex: 2; /* Ocupa 2 partes do grid (ex: 2/3) */
+    min-width: 280px;
+}
+
+.formulario-contato h2 {
+    color: var(--cor-texto);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 5px;
+    font-size: 1.5em;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--cor-texto);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    font-size: 0.95em;
+    box-sizing: border-box; 
+    transition: border-color 0.3s, box-shadow 0.3s 
+
+  }
+
+  
+  /* =========================================
+   NOVO CSS PARA A SEÇÃO DE ENTREGAS
+   (Estilo Minimalista com Destaque na Informação)
+   ========================================= */
+
+/* Use as variáveis definidas no seu CSS principal */
+:root {
+    --cor-primaria: #007bff; /* Azul vibrante */
+    --cor-fundo-claro: #f8f9fa; /* Cinza claro */
+    --cor-texto: #343a40; 
+    --cor-fundo-destaque: #eaf3ff; /* Azul muito claro para fundo */
+    --cor-sucesso: #28a745;
+}
+
+.secao-entregas {
+    padding: 40px 0;
+    background-color: var(--cor-fundo-claro); 
+}
+
+.container-entrega {
+    max-width: 650px; /* Reduzindo um pouco o container */
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px; /* Bordas mais suaves */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--cor-fundo-destaque); /* Borda sutil */
+}
+
+.titulo-entrega {
+    font-size: 2em;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.titulo-entrega i {
+    margin-right: 8px;
+    color: var(--cor-primaria);
+}
+
+.subtitulo-entrega {
+    text-align: center;
+    color: #6c757d; /* Cinza escuro suave */
+    margin-bottom: 25px;
+    font-size: 1em;
+}
+
+/* Destaque para o texto "Chega de carregar peso!" */
+.destaque-peso {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo-destaque); /* Fundo azul claro */
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor-primaria);
+}
+
+.destaque-peso i {
+    color: var(--cor-primaria);
+    margin-right: 8px;
+}
+
+.texto-principal {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--cor-texto);
+    font-size: 1.05em;
+}
+
+/* Lista de Benefícios com Estilo de Ícone Moderno */
+.lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista-beneficios li {
+    font-size: 1em;
+    color: var(--cor-texto);
+    border-bottom: 1px dotted #e9ecef;
+    padding-bottom: 5px;
+}
+
+.lista-beneficios li i {
+    color: var(--cor-sucesso); 
+    margin-right: 10px;
+}
+
+/* Chamada para Ação (Botões) */
+.chamada-acao {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid #dee2e6; /* Separador */
+}
+
+.chamada-acao p {
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.btn-cta-delivery {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 50px; /* Botões mais arredondados (pill shape) */
+    text-decoration: none;
+    font-weight: bold;
+    margin: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-whatsapp {
+    background-color: #25d366; 
+    color: white;
+    border: 2px solid #25d366;
+}
+
+.btn-whatsapp:hover {
+    background-color: white;
+    color: #25d366;
+    border: 2px solid #25d366;
+}
+
+.btn-site {
+    background-color: var(--cor-primaria); 
+    color: white;
+    border: 2px solid var(--cor-primaria);
+}
+
+.btn-site:hover {
+    background-color: white;
+    color: var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
+}
+
+/* Estilos para o Banner de Delivery Curto */
+.banner-delivery-online {
+    background-color: var(--cor-fundo-destaque, #eaf3ff); /* Fundo azul claro */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 500px; /* Mantendo-o compacto */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.titulo-delivery {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--cor-primaria, #007bff);
+    margin-bottom: 5px;
+}
+
+.titulo-delivery i {
+    margin-right: 5px;
+}
+
+.chamada-principal {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--cor-texto, #343a40);
+    margin-bottom: 10px;
+}
+
+.chamada-principal strong {
+    color: var(--cor-primaria, #007bff);
+}
+
+.beneficios-curtos {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.btn-delivery-cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--cor-primaria, #007bff);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-delivery-cta:hover {
+    background-color: #0056b3;
+}
+
+.btn-delivery-cta i {
+    margin-right: 8px;
+}
+
+
+/* --- CONFIGURAÇÕES BÁSICAS DO MENU (Ajuste conforme o seu layout) --- */
+.menu-superior ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-superior li {
+    padding: 10px 15px;
+    text-align: center;
+    position: relative; /* CRUCIAL para o posicionamento do dropdown */
+    cursor: pointer;
+}
+
+.menu-superior a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    font-size: 0.9em;
+}
+
+/* --- ESTILOS DO DROPDOWN --- */
+
+/* 1. Oculta o conteúdo por padrão */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    /* Posicionamento (ajuste o 'left' e 'top' para alinhar) */
+    top: 100%; 
+    left: 50%; /* Centraliza o dropdown pela metade */
+    transform: translateX(-50%); 
+    
+    min-width: 180px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Garante que os itens fiquem dentro das bordas */
+}
+
+/* 2. Estilo dos links internos (FAZER LOGIN, CRIAR CONTA) */
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f1f1f1;
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f8f8;
+}
+
+/* 3. Ação: Mostra o conteúdo quando o mouse está sobre o LI do dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 4. Criando a "seta" ou triângulo (Tip/Pointer) */
+.dropdown:hover .dropdown-content::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px; /* Tamanho da seta */
+    border-style: solid;
+    /* Cria o triângulo apontando para cima */
+    border-color: transparent transparent white transparent; 
+}
+
+
+
+/* =========================================
+   NOVO CSS para Termos Resumidos
+   Estilo Cartões (Boxes)
+   ========================================= */
+
+/* Variáveis (garantindo que as cores sejam as do seu projeto) */
+:root {
+    --cor-primaria: #007bff;
+    --cor-fundo-claro: #f8f9fa;
+    --cor-texto: #343a40;
+    --cor-borda-suave: #dee2e6;
+}
+
+.termos-resumidos {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: var(--cor-fundo-claro); /* Fundo cinza claro para toda a seção */
+    border-radius: 8px;
+}
+
+.termos-resumidos h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 2px dashed var(--cor-borda-suave);
+    padding-bottom: 10px;
+}
+
+.lista-termos {
+    list-style: none; 
+    padding: 0;
+    display: grid; /* Usa grid para layout em colunas se desejar no futuro */
+    grid-template-columns: 1fr; /* Por enquanto, apenas uma coluna */
+    gap: 25px;
+}
+
+/* Estilo do Cartão Principal (o LI) */
+.lista-termos > li {
+    padding: 20px;
+    background-color: white; /* Fundo branco para cada cartão */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+}
+
+.lista-termos > li:hover {
+    transform: translateY(-2px); /* Efeito de leve destaque ao passar o mouse */
+}
+
+/* Título de cada Cartão (Sua Conta, Compras e Produtos) */
+.lista-termos h3 {
+    display: block; /* Garante que o H3 ocupe toda a linha */
+    font-size: 1.4em;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--cor-borda-suave);
+}
+
+/* Itens de Regra (Sub-termos) */
+.sub-termos {
+    list-style: none; /* Remove bolinhas/números padrão */
+    padding: 0;
+}
+
+.sub-termos li {
+    position: relative;
+    padding-left: 25px; /* Espaço para o ícone */
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: var(--cor-texto);
+}
+
+/* Ícone Customizado (usa um pequeno círculo ou checkmark) */
+.sub-termos li::before {
+    content: "\2022"; /* Ponto de lista (bullet point) */
+    font-size: 1.2em;
+    color: var(--cor-primaria);
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.sub-termos li strong {
+    font-weight: 700;
+    color: #495057; /* Um pouco mais escuro que o texto normal */
+}
+
+.aviso-completo {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--cor-borda-suave);
+    font-size: 1em;
+}
+
+.aviso-completo a {
+    color: var(--cor-primaria);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.aviso-completo a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- AJUSTES DO HEADER --- */
+/* Garante que o contêiner de categorias se comporte como um menu */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 25px; 
+}
+
+/* --- CONFIGURAÇÃO DO ITEM DROPDOWN --- */
+.dropdown-categoria-principal {
+    position: relative; /* Pai para posicionar o menu */
+    display: inline-block; /* Garante que o tamanho seja apenas o conteúdo */
+    padding: 10px 0;
+}
+
+/* Estilo do Link Principal (Cães/Gatos) */
+.dropbtn-menu {
+    text-decoration: none;
+    color: var(--cor-texto-menu, #333);
+    font-size: 1em;
+    font-weight: 500;
+    padding: 10px; /* Adiciona padding para área de hover */
+    transition: color 0.2s;
+}
+
+.dropbtn-menu:hover, .dropdown-categoria-principal:hover .dropbtn-menu {
+    color: var(--cor-logo, #ff8c00); 
+}
+
+/* --- CONTEÚDO DO DROPDOWN (AS CATEGORIAS) --- */
+.dropdown-menu-conteudo {
+    display: none; /* Oculto por padrão */
+    position: absolute;
+    top: 100%;      /* Posiciona abaixo do link principal */
+    left: 0;        /* Alinha o lado esquerdo com a categoria */
+    
+    min-width: 220px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-radius: 0 0 4px 4px;
+    padding: 5px 0; /* Padding interno */
+}
+
+/* Estilo dos Links de Subcategoria */
+.dropdown-menu-conteudo a {
+    color: var(--cor-texto-menu, #333);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s;
+    font-size: 0.9em;
+}
+
+.dropdown-menu-conteudo a:hover {
+    background-color: #f0f0f0;
+    color: var(--cor-logo, #ff8c00);
+}
+
+/* --- AÇÃO QUE MOSTRA O DROPDOWN --- */
+.dropdown-categoria-principal:hover .dropdown-menu-conteudo {
+    display: block;
+}
+
+/* =========================================
+   ESTILOS DO SUB-SUBMENU PASSAROS
+   ========================================= */
+
+/* 1. Contêiner do Item (Nível 2) */
+.has-submenu {
+    position: relative; /* Garante que o Nível 3 se posicione relativo a este item */
+}
+
+/* Garante que o link de Alimentação mantenha o estilo normal de link */
+.has-submenu a {
+    display: block;
+    padding: 10px 15px; 
+    color: var(--cor-texto-menu, #333);
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+/* Ícone de seta para indicar que há um submenu */
+.has-submenu a i {
+    float: right;
+    font-size: 0.8em;
+    padding-top: 3px;
+}
+
+/* 2. O Conteúdo do Nível 3 (Sub-Submenu) */
+.sub-submenu {
+    display: none; /* Oculto por padrão */
+    position: absolute;
+    top: 0; /* Alinha o topo do sub-submenu com o topo do link "Alimentação" */
+    left: 100%; /* Posiciona o menu à direita (100% da largura do pai) */
+
+    min-width: 180px;
+    background-color: white; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    z-index: 15; /* Maior que o menu principal */
+    border-radius: 4px;
+    padding: 10px 0;
+}
+
+.sub-submenu h4 {
+    font-size: 0.8em;
+    color: #666;
+    padding: 5px 15px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.sub-submenu a {
+    /* Estilo dos links de espécie */
+    padding: 8px 15px;
+    border-left: 3px solid transparent; 
+}
+
+.sub-submenu a:hover {
+    background-color: var(--cor-fundo-hover, #f1f1f1);
+    border-left: 3px solid var(--cor-logo, #ff8c00);
+}
+
+
+/* 3. AÇÃO PRINCIPAL: MOSTRA O NÍVEL 3 NO HOVER */
+.has-submenu:hover > .sub-submenu {
+    display: block;
+}
+
+/* Opcional: Destaque o link "Alimentação" quando o sub-submenu estiver aberto */
+.has-submenu:hover > a {
+    background-color: var(--cor-fundo-hover, #f1f1f1);
+    color: var(--cor-logo, #ff8c00);
+}
+
+
+
+/* Definições de Cores e Fontes */
+:root {
+    --color-background: #f4f4f9;
+    --color-sidebar-bg: #fff;
+    --color-text-dark: #333;
+    --color-primary: #e6007e; /* Roxo/Rosa do Petlove */
+    --color-club-price: #5e35b1; /* Roxo escuro para preço do Clube */
+    --color-discount: #e74c3c;
+    --color-badge-blue: #3498db;
+    --color-badge-green: #2ecc71;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Base e Layout da Página */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+}
+
+/* 1. Container Principal (Grid Layout) */
+.page-container {
+    display: grid;
+    /* Define a largura da sidebar e o restante para o conteúdo */
+    grid-template-columns: 240px 1fr; 
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 2. BARRA LATERAL (SIDEBAR) */
+.sidebar {
+    background-color: var(--color-sidebar-bg);
+    border-radius: 8px;
+    padding: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    height: fit-content; /* Para não esticar até o final do scroll */
+    position: sticky; /* Mantém a sidebar visível ao rolar */
+    top: 20px;
+}
+
+.filter-group {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+}
+
+.filter-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-text-dark);
+    padding: 5px 20px;
+    margin: 0 0 5px 0;
+}
+
+.filter-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-nav li {
+    padding: 0;
+}
+
+.filter-link {
+    display: block;
+    padding: 8px 20px 8px 30px; /* Mais padding à esquerda para indentação */
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--color-text-dark);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filter-link:hover {
+    background-color: #f0f0f5;
+    color: var(--color-primary);
+}
+
+.filter-link.active {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    border-left: 5px solid var(--color-club-price); /* Destaque na cor secundária */
+    padding-left: 25px; /* Ajusta o padding devido à borda */
+}
+
+
+
+/* --- LAYOUT GERAL DA PÁGINA DE CATEGORIA --- */
+
+/* Contêiner principal para sidebar e produtos */
+.products-layout-container {
+    display: flex;
+    max-width: 1200px; /* Ajuste conforme o layout do seu site */
+    margin: 20px auto;
+    padding: 0 15px;
+    gap: 30px;
+}
+
+/* Breadcrumb e Header */
+.breadcrumb-container {
+    max-width: 1200px;
+    margin: 10px auto 0;
+    padding: 0 15px;
+}
+
+.breadcrumb a {
+    color: #007bff; /* Cor primária do seu site */
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.breadcrumb span {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.category-header {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.category-header h1 {
+    font-size: 2.2em;
+    color: #333;
+    border-bottom: 2px solid #ff7f00; /* Destaque da Planeta Pet */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* --- FILTRO (SIDEBAR) --- */
+
+.filter-sidebar {
+    width: 250px;
+    flex-shrink: 0; /* Impede que a sidebar diminua */
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.filter-sidebar h2 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-sidebar h2 .fas {
+    margin-right: 10px;
+    color: #ff7f00; /* Destaque */
+}
+
+.filter-group {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.filter-group h3 {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+    cursor: pointer; /* Para indicar que pode ser colapsável */
+}
+
+.filter-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-group li {
+    margin-bottom: 8px;
+}
+
+.filter-group label {
+    font-size: 0.95em;
+    color: #444;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-group input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #ff7f00; /* Cor de destaque no checkbox */
+}
+
+.filter-group input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* --- LISTAGEM DE PRODUTOS Cão ra~]ao seca--- */
+
+.product-listing-area {
+    flex-grow: 1; /* Ocupa o restante do espaço */
+}
+
+.sort-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.sort-options p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.sort-options select {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Grid dos Cards de Produto */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas padrão */
+    gap: 20px;
+}
+
+/* Card Individual de Produto */
+.product-card-listing {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+    position: relative;
+    background-color: #fff;
+}
+
+.product-card-listing:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card-listing a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-card-listing img {
+    max-width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.product-card-listing .product-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.product-card-listing .offer-tag {
+    background-color: #e74c3c; /* Vermelho para ofertas */
+}
+
+.product-card-listing .highlight-tag {
+    background-color: #2ecc71; /* Verde para destaque */
+}
+
+.product-card-listing .product-title {
+    font-size: 1em;
+    height: 3em; /* Para manter o tamanho fixo em 2 linhas */
+    overflow: hidden;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-card-listing .product-price-old {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.85em;
+    margin-bottom: 2px;
+}
+
+.product-card-listing .product-price-new {
+    font-size: 1.4em;
+    color: #ff7f00; /* Cor de destaque para o preço */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-card-listing .installments {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.add-to-cart-button {
+    background-color: #ff7f00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.add-to-cart-button:hover {
+    background-color: #e66f00;
+}
+
+.add-to-cart-button .fas {
+    margin-right: 5px;
+}
+
+/* PAGINAÇÃO */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 50px;
+}
+
+.page-link {
+    display: block;
+    padding: 8px 15px;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover:not(.disabled):not(.active) {
+    background-color: #f0f0f0;
+}
+
+.page-link.active {
+    background-color: #ff7f00;
+    color: white;
+    border-color: #ff7f00;
+}
+
+.page-link.disabled {
+    color: #aaa;
+    cursor: not-allowed;
+    background-color: #fafafa;
+}
+
+
+
+/* Tudo para cães */
+.banner-principal-caes {
+    background-color: #e48a03; 
+    background-image: linear-gradient(to right, #e48a03,);
+    padding: 50px 20px;
+    color: var(--cor-texto-claro);
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner-principal-caes h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.banner-principal-caes p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+/* --- ESTILOS CSS --- */
+
+/* 1. Reset e Fundo */
+body {
+    /* Fonte parecida com a original */
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: #f8f8f8; 
+    display: flex;
+    justify-content: center;
+    /* Alinha o formulário mais para cima da tela */
+    align-items: flex-start; 
+    padding-top: 50px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* 2. Container Principal */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* 3. Campos de Input */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px;
+    border: 1px solid #cccccc; 
+    border-radius: 8px; 
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Estilo para a Senha (para posicionar o ícone) */
+.password-group input {
+    padding-right: 45px; 
+}
+
+/* Simulação do Ícone de Olho (ajuste para o ícone real) */
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* O ícone real seria um SVG ou imagem aqui. */
+    width: 20px; 
+    height: 20px;
+    cursor: pointer;
+    border: 1px solid #999; /* Simulação visual do ícone */
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+/* 4. Link "Esqueci minha senha" */
+.link-forgot {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.link-forgot a {
+    /* Cor azul-água ou teal da Cobasi */
+    color: #00a0b0; 
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* 5. Botão Primário (Entrar) - Cinza Desabilitado/Neutro */
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background-color: #cccccc; 
+    color: white; /* Texto branco */
+    border: none;
+    border-radius: 30px; /* Cantos bem arredondados */
+    font-size: 18px;
+    font-weight: 500;
+    cursor: default; /* Simula o botão "desabilitado" antes de preencher */
+    margin-bottom: 30px;
+}
+
+/* 6. Divisor "Acesso rápido com" */
+.divider {
+    text-align: center;
+    font-size: 14px;
+    color: #808080;
+    position: relative;
+    margin: 30px 0;
+}
+
+/* Linhas do Divisor (usando pseudo-elementos) */
+.divider::before, .divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 33%; 
+    height: 1px;
+    background: #e0e0e0;
+}
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+
+/* 7. Botão Secundário (Chave de Acesso) - VAZADO */
+.btn-secondary {
+    width: 100%;
+    padding: 15px;
+    background-color: white; 
+    color: #00a0b0; 
+    border: 2px solid #00a0b0; 
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+/* 8. Links Finais */
+.register-info, .terms-policy {
+    text-align: center;
+    line-height: 1.5;
+}
+
+.register-info {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.register-info a, .terms-policy a {
+    color: #00a0b0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.terms-policy {
+    font-size: 14px;
+    color: #808080;
+    margin-top: 30px;
+}
